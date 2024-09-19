@@ -1,16 +1,22 @@
 body{
-    background-image: url("tree.png");
+  background-image:url("RM/aurora.png");
+  
     background-repeat: no-repeat;
     background-size: cover;
 }
-h1{
-    color: rgb(60, 179, 113), blue;
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 100px;
-}.header {
+.header {
     overflow: hidden;
-    background-color: rgb(33, 117, 7);
+    background:linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255.0));
+    backdrop-filter: blur(10px);
+-webkit-backdrop-filter: (10px);
+border-radius: 40px;
+border: 1px solid rgba(255,255,255,0.18);
+box-shadow: 0  8px 32px rgba(0,0,0,0.37);
+  
+padding: 10px;
+margin: 0px;
+   
+ 
     /*padding: 20px 10px;*/
   }
   
@@ -23,7 +29,7 @@ h1{
   /* Style the header links */
   .header a {
     float: left;
-    color: white;
+    color: rgb(231, 173, 27);
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -43,18 +49,23 @@ h1{
   
   /* Change the background color on mouse-over */
   .header a:hover {
-    background-color: rgb(88, 3, 3);
-    color: White;
+    background-color:white;
+  border-radius: 20px;
+    
   }
   
   .header a.active {
-    background-color: rgb(54, 54, 1);
-    color: white;
+    
+    color: gold;
+
   }
   
   /* Float the link section to the right */
   .header-Right {
     float: right;
+    margin:0;
+
+
   }
 
   .footer{
@@ -62,14 +73,82 @@ h1{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(153, 245, 125);
-    color: rgb(13, 151, 75);
+    
+    color: black;
     text-align: center;
-    padding: 2%;
+    padding: 10px;
+    overflow: hidden;
+
+    background:linear-gradient(135deg, rgba(255,255,255,0.1));
+    backdrop-filter: blur(10px);
+-webkit-backdrop-filter: (10px);
+border-radius: 20px;
+border: 10px solid rgba(255,255,255,0.18);
+box-shadow: 0  8px 40px rgba(0,0,0,1);
+  
+
+
   }
   #content{
     color: maroon;
     text-align: justify;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 75px;
+    background-color: black;
+    
   }
+  .title h1{
+
+font-size: 30px;
+color: white;
+
+  }
+  .homepage h1{
+    font-size: 40px;
+    color: white;
+  }
+  .box h2{
+
+    text-align: center;
+width: 800px;
+margin-top: 20px;
+height: 400px;
+
+/*glass*/
+background:linear-gradient(135deg, rgba(255,255,255,0.1));
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter:blur(10px);
+border-radius: 20px;
+border: 10px solid rgba(255,255,255,0.18);
+box-shadow: 0  8px 32px rgba(0,0,0,0.37);
+
+  
+  } h1{
+    color: mediumspringgreen;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+.box{
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  
+}
+.box h4{
+
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+width: 800px;
+margin-top: 20px;
+height: 400px;
+
+/*glass*/
+background:linear-gradient(135deg, rgba(255,255,255,0.1));
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter:blur(10px);
+border-radius: 20px;
+border: 10px solid rgba(255,255,255,0.18);
+box-shadow: 0  8px 32px rgba(0,0,0,0.37);
+
+}
