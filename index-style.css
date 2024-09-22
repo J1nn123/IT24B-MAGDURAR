@@ -45,12 +45,13 @@ margin: 0px;
     font-size: 25px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    text-align:flex;
   }
   
   /* Change the background color on mouse-over */
   .header a:hover {
     background-color:white;
-  border-radius: 20px;
+  border-radius: 50px;
     
   }
   
@@ -94,7 +95,7 @@ box-shadow: 0  8px 40px rgba(0,0,0,1);
     text-align: justify;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 75px;
-    background-color: black;
+    background-color: white;
     
   }
   .title h1{
@@ -108,12 +109,14 @@ color: white;
     color: white;
   }
   .box h2{
-
-    text-align: center;
+  
+text-align: center;
 width: 800px;
 margin-top: 20px;
 height: 400px;
-
+color: white;
+font-size: 16px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 /*glass*/
 background:linear-gradient(135deg, rgba(255,255,255,0.1));
 backdrop-filter: blur(10px);
@@ -142,8 +145,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 width: 8000px;
 margin-top: 20px;
 height: 400px;
-
-
+color: azure;
 /*glass*/
 background:linear-gradient(135deg, rgba(255,255,255,0.1));
 backdrop-filter: blur(10px);
@@ -162,8 +164,14 @@ position: absolute;
 right: 0;
 bottom: 0;
 z-index: -1;
- 
   min-width: 100%;
   min-height: 100%;
+margin-bottom: 0px;
+margin-top: auto;
+
+}
+.tanjiro{
+margin: center;
+
 
 }
