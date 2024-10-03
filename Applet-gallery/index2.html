@@ -17,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="applet1.html">Home</a>
               </li>
              
               <li class="nav-item dropdown">
@@ -25,7 +25,7 @@
                   Applits
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="index2.html">Applet-1</a></li>
+                  <li><a class="dropdown-item" href="#">Applet-1</a></li>
                   <li><a class="dropdown-item" href="#">Applet-2</a></li>
              
                 
@@ -41,88 +41,83 @@
         </div>
       </nav>
 
-      
-    <h1 style=" text-align: center; color: rgb(215, 140, 28);">Applet Gallery </h1>
 
+      <style>
 
-    
+ .btn-primary {
 
-</head>
-
-<style >
-.applet-flex-container {
-justify-content: center;
-display: flex;
-width: 95%;
-flex-wrap: wrap;
-
-
-}.applet-flex-container > div{
-margin-left: 5.0rem;
-margin-right:  2.0rem;
-margin-top: 8rem;
-}
-
-
-.applet-card{
-
-    width: 18rem;
-    height: 12rem;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
    
-  
-  
-}
- img{
-width: 200px;
-height: 200px;
-    object-fit: cover;
+}#textbox{
+margin-bottom: 4rem;
+
+
+}.applet-container{
+
+justify-content: center;
+text-align: center;
+margin-top: 20rem;
+margin-left: 50rem;
+width: 400px;
+
+
 
 }.card-title{
-    text-align: center;
-    
-}.card:hover {
-  background-color: rgb(185, 185, 179);
- 
-  transform: scale(1.1);
+
+color:rgb(43, 174, 131);
+
+
+
+}input{
+width: 250px;
+height: 30px;
+margin-top: 4rem;
+
+}.card-body{
+
+height: 400px;
+
+
+
 }
-.card{
- transition: transform .3s;
-}
+      </style>
 
-
-</style>
-
-
+</head>
 <body>
-<div class=" applet-flex-container"> 
-
-
-    <div class="card" style="width: 18rem;">
-        <img src="cat.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-title">Applet 1 - Basic Events</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="index2.html" class="btn btn-primary">Go to Applet-1</a>
-        </div>
-        </div>
     
-  
+    <div class="applet-container  ">
+       
         <div class="card" style="width: 18rem;">
-            <img src="dog.png" class="card-img-top" alt="Applet-1">
+
             <div class="card-body">
-              <h4 class="card-title">Applet 2 - Leaflet Map</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Map </a>
+              <h1 class="card-title">Input event</h1>
+              <h3 id="displayText" style =" margin-top: 30px; color: rgb(196, 142, 77); font-size: 20px;">output </h3>
+
+              <input  type="text" id="textbox"  placeholder="Type anything.." oninput="updateDisplay()">   
+             
+        <button  class="btn btn-primary"  onclick="showAlert()">Click me</button>
             </div>
-        </div>
-
-
-
+          </div>
       
-              
-    </div>
-
-
+        </div>
     
+
+<script>
+
+    //Function 1
+function updateDisplay() {
+    var textbox = document.getElementById('textbox');
+    var displayText = document.getElementById('displayText');
+    displayText.textContent = textbox.value;
+}
+
+function showAlert() {
+    var textbox = document.getElementById('textbox');
+    alert(" " + textbox.value);
+}
+
+</script>
 </body>
 </html>
