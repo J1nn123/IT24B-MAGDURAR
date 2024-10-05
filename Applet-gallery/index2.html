@@ -41,83 +41,86 @@
         </div>
       </nav>
 
-
       <style>
-
- .btn-primary {
-
-    width: 250px;
-    height: 50px;
-    font-size: 20px;
-   
-}#textbox{
-margin-bottom: 4rem;
-
-
-}.applet-container{
-
-justify-content: center;
-text-align: center;
-margin-top: 20rem;
-margin-left: 50rem;
-width: 400px;
-
-
-
-}.card-title{
-
-color:rgb(43, 174, 131);
-
-
-
-}input{
-width: 250px;
-height: 30px;
-margin-top: 4rem;
-
-}.card-body{
-
-height: 400px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+          
+           
+            
+        }
+        #logDisplay {
+            width: 40rem;
+            height: 20rem;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            padding: 10px;
+            overflow-y:auto;
+            white-space: pre-wrap; 
+            background-color: #f9f9f9;
+          margin-left: auto;
+           margin-top: 50px;
+           margin-right: auto;
+           font-size: 2rem;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           background-color: aqua;
+           align-items: center;
+       
+        }
+       
+#countLabel{
 
 
-
+  margin-top:3rem;
+  margin-left: 50rem;
+  font-size: 30px;
 }
-      </style>
-
+#logButton{
+  margin-left:50rem;
+  margin-right: 2rem;
+  
+}
+  
+    </style>
 </head>
 <body>
+
+  <div id="countLabel">Total Logs: 0</div>
+    <div id="logDisplay"></div>
+    <button id="logButton">Add Log</button>
+    <button id="resetButton">Reset Logs</button>
     
-    <div class="applet-container  ">
+
+    <script>
        
-        <div class="card" style="width: 18rem;">
+        let logs = [];
 
-            <div class="card-body">
-              <h1 class="card-title">Input event</h1>
-              <h3 id="displayText" style =" margin-top: 30px; color: rgb(196, 142, 77); font-size: 20px;">output </h3>
+        
+        const logButton = document.getElementById('logButton');
+        const resetButton = document.getElementById('resetButton');
+        const logDisplay = document.getElementById('logDisplay');
+        const countLabel = document.getElementById('countLabel');
 
-              <input  type="text" id="textbox"  placeholder="Type anything.." oninput="updateDisplay()">   
-             
-        <button  class="btn btn-primary"  onclick="showAlert()">Click me</button>
-            </div>
-          </div>
-      
-        </div>
-    
+       
+        logButton.addEventListener('click', function() {
+          
+            const logEntry = new Date().toLocaleString();
+            logs.push(logEntry);
+            
+         
+            logDisplay.textContent += logEntry + '\n';
+            
+          
+            countLabel.textContent = 'Total Logs: ' + logs.length;
+        });
 
-<script>
+       
+        resetButton.addEventListener('click', function() {
+            logs = []; 
+            logDisplay.textContent = ''; 
+            countLabel.textContent = 'Total Logs: 0'; 
+        });
+    </script>
 
-    //Function 1
-function updateDisplay() {
-    var textbox = document.getElementById('textbox');
-    var displayText = document.getElementById('displayText');
-    displayText.textContent = textbox.value;
-}
-
-function showAlert() {
-    var textbox = document.getElementById('textbox');
-    alert(" " + textbox.value);
-}
-
-</script>
 </body>
 </html>

@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <!---leaflet links-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-   
-
-<nav  class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <title>Applet 2 - Leaflet Map</title>
+    <nav  class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="applet1.html">Home</a>
               </li>
              
               <li class="nav-item dropdown">
@@ -31,7 +26,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="index2.html">Applet-1</a></li>
-                  <li><a class="dropdown-item" href="Applet-2.html">Applet-2</a></li>
+                 
              
                 
                 </ul>
@@ -47,7 +42,7 @@
       </nav>
 
       
-    <h1 style=" text-align: center; color: rgb(215, 140, 28);">Applet Gallery </h1>
+    <h1 style=" text-align: center; color:black;">Leaflet Map </h1>
 
 
     
@@ -95,55 +90,63 @@ height: 200px;
 }
 #map{
 
-  width: 600px;
-  height: 600px;
+  width: 200vh;
+  height: 70vh;
 }
+.applet-container{
+            margin-top: 1rem;
+         
+            width: 90%;
+        }
+
 
 </style>
-
-
 <body>
-<div class=" applet-flex-container"> 
-
-
-    <div class="card" style="width: 18rem;">
-        <img src="cat.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-title">Applet 1 - Basic Events</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="index2.html" class="btn btn-primary">Go to Applet-1</a>
-        </div>
-        </div>
-    
-  
-        <div class="card" style="width: 18rem;">
-            <img src="dog.png" class="card-img-top" alt="Applet-1">
-            <div class="card-body">
-              <h4 class="card-title">Applet 2 - Leaflet Map</h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="Applet-2.html" class="btn btn-primary">Go to Map </a>
-            </div>
-        </div>
-
-        <div class="map"></div>
-
-
-        <script>
-
-const map =L.map('map');
-map.setView([8.3169107, 124.8583317],14);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-
-        </script>
+    <div class="applet-container">
       
-              
+        <div id="map"></div>
+      
     </div>
+   
+<script>
+class LeafletMap {
+
+    constructor(containerId, center, zoom) {
+        this.map = L.map(containerId).setView(center, zoom);
+        this.initTileLayer();
+    }
+
+    initTileLayer() {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(this.map);
+    }
+
+    addMarker(lat, lng, message) {
+        const marker = L.marker([lat, lng]).addTo(this.map);
+        marker.bindPopup(message);
+    }
+
+    loadMarkersFromJson(url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(marker => {
+                    this.addMarker(marker.latitude, marker.longitude, marker.message);
+                });
+            })
+            .catch(error => console.error('Error loading markers:', error));
+    }
+}
+
+const myMap = new LeafletMap('map', [8.31724, 124.85825], 14);
 
 
-    
+
+myMap.loadMarkersFromJson('applet-2.json');
+
+</script>
 </body>
+
 </html>
