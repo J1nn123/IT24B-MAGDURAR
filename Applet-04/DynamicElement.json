@@ -1,12 +1,8 @@
 [
-
-{
- "name":"jino",
- "Lastname": "Magdura"
-
-
-
-}
-
-    
+    {"name":"Michael", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"Jin", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"Lyn", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"Gel", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"Joseph", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"Dirk", "age":"30", "birthdate":"11/10/1989"}
 ]
