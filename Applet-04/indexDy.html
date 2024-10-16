@@ -17,9 +17,11 @@
 
 <table class="table table">
     <tr  class="bg-info">
-        <th  class="bg-info" data-colname="name" data-order="desc">Name</th>
-        <th  data-colname="age" data-order="desc">Age</th>
-        <th  data-colname="birthdate" data-order="desc">Birthday</th>
+        <th  class="bg-success" data-colname="name" data-order="desc">Name</th>
+        <th class="bg-success" data-colname="age" data-order="desc">Age</th>
+        <th class="bg-success" data-colname="birthdate" data-order="desc">Course</th>
+        <th class="bg-success" data-colname="birthdate" data-order="desc">Address</th>
+        
     </tr>
     <tbody id="Table">
         
@@ -27,55 +29,6 @@
 </table>
 
 
-<script>
-var myArray = [
-    {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
-    {'name':'Jin', 'age':'32', 'birthdate':'10/1/1989'},
-    {'name':'Lyn', 'age':'29', 'birthdate':'10/14/1990'},
-    {'name':'Gel', 'age':'25', 'birthdate':'11/29/1993'},
-    {'name':'Joseph', 'age':'27', 'birthdate':'3/12/1991'},
-    {'name':'Dirk', 'age':'24', 'birthdate':'10/31/1995'},
-]
-
-$('#search-input').on('keyup', function(){
-var value = $(this).val()
-console.log ('Value:', value)
-var data = searchTable(value, myArray)
-buildTable(data)
-})
-
-buildTable(myArray)
-
-function searchTable(value, data){
-var filteredData=[]
-for (var i = 0; i<data.length ; i++){
-  value =value.toLowerCase()
-var name =data[i].name.toLowerCase();
-
-  if (name.includes(value)){
-filteredData.push(data[i])
-
-  }
-}
-return filteredData
-}
-
-
-   
- 
-    
-function buildTable(data){
-    var table = document.getElementById('Table')
-    table.innerHTML = ''
-    for (var i = 0; i < data.length; i++){
-        
-        var row = `<tr>
-                        <td>${data[i].name}</td>
-                        <td>${data[i].age}</td>
-                        <td>${data[i].birthdate}</td>
-                   </tr>`
-        table.innerHTML += row
-    }
-}
+<script src="DynamicElements.js">
 
 </script>
