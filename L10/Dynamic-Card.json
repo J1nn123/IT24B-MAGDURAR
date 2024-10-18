@@ -1,0 +1,34 @@
+[
+    {
+      "title": "Applet 1 - DOM",
+      "description": "This application contains the basic implementation of DOM events",
+      "image": "Applet-1/DOM.png",
+      "link": "Applet-1/index.html",
+      "buttonText": "Go to DOM",
+      "buttonClass": "btn-primary"
+    },
+    {
+        "title": "Applet 2 - Leaflet Map",
+      "description": "This application contains the basic web map",
+      "image": "Applet-2/leafletmap.jpg",
+      "link": "Applet-2/index.html",
+      "buttonText": "Leaflet Map",
+      "buttonClass": "btn-success"
+    },
+    {
+        "title": "Applet 3 - Basic Events",
+        "description": "This application applies recording events while using HTML elements such as buttons",
+      "image": "Applet-3/eventlogger.PNG",
+      "link": "Applet-3/index.html",
+      "buttonText": "Event Logger",
+      "buttonClass": "btn-primary"
+    },
+    {
+        "title": "Applet 4 - Dynamic Elements",
+      "description": "This application applies dynamic elements such as rendering DOM elements from a list",
+      "image": "Applet-4/image.png",
+      "link": "Applet-4/index.html",
+      "buttonText": "Dynamic Elements",
+      "buttonClass": "btn-success"
+    }
+  ]
