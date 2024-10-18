@@ -31,7 +31,6 @@ function buildTable(applets) {
   });
 }
 
-// Function  ani, is to filter data based on search input
 function searchTable(value, data) {
   return data.filter(applet => applet.title.toLowerCase().includes(value));
 }
