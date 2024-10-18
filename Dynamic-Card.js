@@ -1,5 +1,5 @@
 
-fetch('L10/Dynamic-card.json')
+fetch('Dynamic-card.json')
   .then(response => response.json())
   .then(data => {
     buildTable(data); 
