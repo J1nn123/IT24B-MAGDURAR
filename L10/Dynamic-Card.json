@@ -8,7 +8,7 @@
       "buttonClass": "btn-primary"
     },
     {
-        "title": "Applet 2 - Leaflet Map",
+      "title": "Applet 2 - Leaflet Map",
       "description": "This application contains the basic web map",
       "image": "Applet-2/leafletmap.jpg",
       "link": "Applet-2/index.html",
@@ -16,7 +16,7 @@
       "buttonClass": "btn-success"
     },
     {
-        "title": "Applet 3 - Basic Events",
+      "title": "Applet 3 - Basic Events",
         "description": "This application applies recording events while using HTML elements such as buttons",
       "image": "Applet-3/eventlogger.PNG",
       "link": "Applet-3/index.html",
@@ -24,11 +24,21 @@
       "buttonClass": "btn-primary"
     },
     {
-        "title": "Applet 4 - Dynamic Elements",
+      "title": "Applet 4 - Dynamic Elements",
       "description": "This application applies dynamic elements such as rendering DOM elements from a list",
       "image": "Applet-4/image.png",
       "link": "Applet-4/index.html",
       "buttonText": "Dynamic Elements",
       "buttonClass": "btn-success"
-    }
+    },
+    {
+    "title": "Applet 5 - Open Weather",
+    "description": "This application is the basic usage of the Openweather API",
+    "image": "Applet-5/weather.png",
+    "link": "Applet-5/index.html",
+    "buttonText": "Open Weather",
+    "buttonClass": "btn-warning"
+  }
+
+
   ]
