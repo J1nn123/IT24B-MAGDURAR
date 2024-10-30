@@ -1,21 +1,49 @@
-async function getWeather() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
-    const city = document.getElementById('city').value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+const search = document.querySelector('.search-box button');
+search.addEventListener('click', () => {
+    const apikey = '5ff93919613f6bf4102d53e26808d0a9';
+    const city = document.querySelector('.search-box input').value;
     
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+    if (city === '') return;
 
-        if (data.cod === 200) {
-            document.getElementById('city-name').textContent = `Weather in ${data.name}`;
-            document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
-            document.getElementById('description').textContent = `Description: ${data.weather[0].description}`;
-            document.getElementById('weather').style.display = 'block';
-        } else {
-            alert('City not found');
-        }
-    } catch (error) {
-        alert('Error fetching weather data');
-    }
-}
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`)
+        .then(response => response.json())
+        .then(json => {
+            if (json.cod !== 200) { 
+                console.error('Error fetching weather data:', json.message);
+                return;
+            }
+
+            const image = document.querySelector('.weather-box img');
+            const temperature = document.querySelector('.temperature');
+            const description = document.querySelector('.description');
+            const humidity = document.querySelector('.humidity span');
+            const wind = document.querySelector('.wind span');
+
+            switch (json.weather[0].main) {
+                case 'Clear':
+                    image.src = './clear.png';
+                    break;
+                case 'Rain':
+                    image.src = './rain.png';
+                    break;
+                case 'Snow':
+                    image.src = './snow.png';
+                    break;
+                case 'Mist':
+                    image.src = './mist.png';
+                    break;
+                case 'Haze':
+                    image.src = './mist.png';
+                    break;
+                default:
+                    image.src = './cloud.png';
+                    break;
+            }
+
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)} km/h`; 
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
+});
