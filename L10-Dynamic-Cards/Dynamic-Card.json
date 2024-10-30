@@ -38,7 +38,16 @@
     "link": "Applet-5/index.html",
     "buttonText": "Open Weather",
     "buttonClass": "btn-warning"
+  },
+  {
+    "title": "Applet 6 - Todo-List",
+    "description": "This application is help individuals manage task by allowing them to add, edit, delete items",
+    "image": "Applet-6/TODO.png",
+    "link": "Applet-6/index.html",
+    "buttonText": "Todo-List",
+    "buttonClass": "btn-danger"
   }
+
 
 
   ]
