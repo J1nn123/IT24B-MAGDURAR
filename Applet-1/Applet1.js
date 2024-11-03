@@ -1,11 +1,11 @@
-//Event Function 1
+
 function updateDisplay() {
     var textbox = document.getElementById('textbox');
     var displayText = document.getElementById('displayText');
     displayText.textContent = textbox.value;
 }
 
-function showAlert() {
+function showAlert( ) {
     var textbox = document.getElementById('textbox');
     alert( textbox.value);
 }

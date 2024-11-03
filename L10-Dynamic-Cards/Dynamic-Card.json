@@ -46,8 +46,15 @@
     "link": "Applet-6/index.html",
     "buttonText": "Todo-List",
     "buttonClass": "btn-danger"
+  },
+
+  {
+    "title": "L05 - Portfolio",
+    "description": "This application contains the information about the anime character tanjiro",
+    "image": "L05/portfolio.png",
+    "link": "L05/index.html",
+    "buttonText": "Portfolio",
+    "buttonClass": "btn-warning"
   }
-
-
 
   ]
