@@ -8,7 +8,7 @@
       "buttonClass": "btn-primary"
     },
     {
-      "title": "Applet 2 - Leaflet Map",
+      "title": "Leaflet Map",
       "description": "This application contains the basic web map",
       "image": "Applet-2/leafletmap.jpg",
       "link": "Applet-2/index.html",
